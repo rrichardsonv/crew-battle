@@ -1,0 +1,161 @@
+{
+  "stages": [{
+    "name":"Battlefield / Miiverse",
+    "icon":"battlefield"
+  }, {
+    "name":"Castle Siege",
+    "icon":"castlesiege"
+  }, {
+    "name":"Delphino Plaza",
+    "icon":"delphino"
+  }, {
+    "name":"Dreamland64",
+    "icon":"dreamland"
+  }, {
+    "name":"Duckhunt",
+    "icon":"duckhunt"
+  }, {
+    "name":"Final Destination / Ω",
+    "icon":"final"
+  }, {
+    "name":"Lylat Cruise",
+    "icon":"lylat"
+  }, {
+    "name":"Smashville",
+    "icon":"smashville"
+  }, {
+    "name":"Town and City",
+    "icon":"townandcity"
+  }],
+  "positions": [
+    "s1", "d1a", "d1b", "d2a", "d2b", "s2"
+  ],
+  "matches": [
+    "Singles 1", "Doubles 1", "Doubles 1", "Doubles 2", "Doubles 1", "Singles 1"
+  ],
+  "displayMsgs": {
+    "entering":"Enter your name!",
+    "banning":"Ban a character!",
+    "picking":"Pick your character!",
+    "striking":"Ban a stage!",
+    "selecting":"Pick a stage!",
+    "playing":"Fight!"
+  },
+  "characters": [{
+    "icon":"bayonetta"
+  }, {
+    "icon":"metaknight"
+  }, {
+    "icon":"bowser"
+  }, {
+    "icon":"mewtwo"
+  }, {
+    "icon":"bowserjr"
+  }, {
+    "icon":"miifighter"
+  }, {
+    "icon":"captain"
+  }, {
+    "icon":"miigunner"
+  }, {
+    "icon":"charizard"
+  }, {
+    "icon":"miiswordsman"
+  }, {
+    "icon":"cloud"
+  }, {
+    "icon":"ness"
+  }, {
+    "icon":"corrin"
+  }, {
+    "icon":"pacman"
+  }, {
+    "icon":"darkpit"
+  }, {
+    "icon":"palutena"
+  }, {
+    "icon":"dedede"
+  }, {
+    "icon":"peach"
+  }, {
+    "icon":"diddy"
+  }, {
+    "icon":"pikachu"
+  }, {
+    "icon":"donkey"
+  }, {
+    "icon":"pikmin"
+  }, {
+    "icon":"drmario"
+  }, {
+    "icon":"pit"
+  }, {
+    "icon":"duckhunt"
+  }, {
+    "icon":"falco"
+  }, {
+    "icon":"rob"
+  }, {
+    "icon":"fox"
+  }, {
+    "icon":"robin"
+  }, {
+    "icon":"gamewatch"
+  }, {
+    "icon":"roselina"
+  }, {
+    "icon":"ganon"
+  }, {
+    "icon":"roy"
+  }, {
+    "icon":"greninja"
+  }, {
+    "icon":"ryu"
+  }, {
+    "icon":"ike"
+  }, {
+    "icon":"samus"
+  }, {
+    "icon":"jigglypuff"
+  }, {
+    "icon":"sheik"
+  }, {
+    "icon":"kirby"
+  }, {
+    "icon":"shulk"
+  }, {
+    "icon":"link"
+  }, {
+    "icon":"sonic"
+  }, {
+    "icon":"littlemac"
+  }, {
+    "icon":"toonlink"
+  }, {
+    "icon":"lucario"
+  }, {
+    "icon":"villager"
+  }, {
+    "icon":"lucas"
+  }, {
+    "icon":"wario"
+  }, {
+    "icon":"lucina"
+  }, {
+    "icon":"wiifit"
+  }, {
+    "icon":"luigi"
+  }, {
+    "icon":"yoshi"
+  }, {
+    "icon":"mario"
+  }, {
+    "icon":"zelda"
+  }, {
+    "icon":"marth"
+  }, {
+    "icon":"zerosuit"
+  }, {
+    "icon":"megaman"
+  }]
+}
