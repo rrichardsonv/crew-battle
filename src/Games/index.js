@@ -17,48 +17,58 @@ class MainScreen extends Component {
     this._handleStageSelect = this._handleStageSelect.bind(this)
     this._handleStageStrike = this._handleStageStrike.bind(this)
     this._handlePlayerEntry = this._handlePlayerEntry.bind(this)
+    this._sendChoiceToState = this._sendChoiceToState.bind(this)
+  }
+  _sendChoiceToState (obj) {
+    this.props.dispatch(lockInChoice(obj))
   }
   _handlePlayerEntry (ev) {
     ev.preventDefault()
-    var entry = ev.target.firstChild
-    this.props.dispatch(lockInChoice({
+    var entry = ev.target.children
+    let allPlayers = []
+    for (var i = 0; i < 6; i++) {
+      allPlayers.push({
+        tag: entry[i].value,
+        position: entry[i].name
+      })
+    }
+    this._sendChoiceToState({
       phase: 'enter',
-      team: entry.name.slice(0,4),
-      player: {tag: entry.value, position: entry.name.slice(4)}
-    }))
-    entry.value = ''
+      team: this.props.games.activePlayer,
+      players: allPlayers
+    })
   }
   _handleCharacterPick (ev) {
     ev.preventDefault()
-    this.props.dispatch(lockInChoice({
+    this._sendChoiceToState({
       phase: 'pick',
       player: this.props.games.activePlayer,
       character: ev.target.name
-    }))
+    })
   }
   _handleCharacterBan (ev) {
     ev.preventDefault()
-    this.props.dispatch(lockInChoice({
+    this._sendChoiceToState({
       phase: 'ban',
       team: this.props.games.activePlayer.slice(0,4),
       character: ev.target.name
-    }))
+    })
   }
   _handleStageSelect (ev) {
     ev.preventDefault()
-    this.props.dispatch(lockInChoice({
+    this._sendChoiceToState({
       phase: 'select',
       match: this.props.games.activePlayer.slice(4).slice(0,2),
       stage: ev.target.name
-    }))
+    })
   }
   _handleStageStrike (ev) {
     ev.preventDefault()
-    this.props.dispatch(lockInChoice({
+    this._sendChoiceToState({
       phase: 'strike',
       team: this.props.games.activePlayer.slice(0,4),
       stage: ev.target.name
-    }))
+    })
   }
   render () {
     let screen
@@ -67,7 +77,7 @@ class MainScreen extends Component {
         screen = (
           <TeamEntry
             handleEntry={this._handlePlayerEntry}
-            position={this.props.games.activePlayer}
+            side={this.props.games.activePlayer}
           />
         )
         break

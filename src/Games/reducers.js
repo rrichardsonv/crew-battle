@@ -3,7 +3,7 @@ import { SET_ACTIVE_PLAYER, ADVANCE_GAME_STATE, SET_ACTIVE_MODAL, TURN_OFF_MODAL
 
 const DEFAULT_STATE = {
   gameState: 'entering',
-  activePlayer: 'easts1',
+  activePlayer: 'east',
   lastPlayer: false,
   currentModal: 'intro',
   modalsOn: true
@@ -52,18 +52,8 @@ const phaseOrder = Object.freeze([
   'playing'
 ])
 const entryOrder = Object.freeze([
-  'easts1',
-  'eastd1a',
-  'eastd1b',
-  'eastd2a',
-  'eastd2b',
-  'easts2',
-  'wests1',
-  'westd1a',
-  'westd1b',
-  'westd2a',
-  'westd2b',
-  'wests2'
+  'east',
+  'west'
 ])
 
 const playerOrder = Object.freeze({
@@ -131,7 +121,6 @@ const games = (state = DEFAULT_STATE, action) => {
     case TURN_OFF_MODALS:
       return turnOffModals(state, action)
     case SET_ACTIVE_PLAYER:
-      console.log(state)
       let gameResponse
       if (state.lastPlayer) {
         gameResponse = (advanceGameState(state, action))

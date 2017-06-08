@@ -1,4 +1,4 @@
-import { ADD_TEAM_MEMBER, ADD_TEAM_CHARACTER_BAN, ADD_TEAM_STAGE_BAN, ADD_TEAM_STAGE_CHOICE, ADD_TEAM_CHARACTER_CHOICE } from './actions'
+import { ADD_TEAM_MEMBER, BULK_ADD_TEAM, ADD_TEAM_CHARACTER_BAN, ADD_TEAM_STAGE_BAN, ADD_TEAM_STAGE_CHOICE, ADD_TEAM_CHARACTER_CHOICE } from './actions'
 
 const DEFAULT_STATE = {
   east: {
@@ -32,6 +32,13 @@ const addTeamMember = (state, action) => {
     players: state[action.teamId].players.concat(action.player)
   })
   return modifyAppropriateTeam(state, action, newTeam)
+}
+const bulkAddTeam = (state, action) => {
+  const newPlayers = {}
+  Object.assign(newPlayers, state[action.teamId], {
+    players: action.players
+  })
+  return modifyAppropriateTeam(state, action, newPlayers)
 }
 
 const addTeamCharacterBan = (state, action) => {
@@ -72,6 +79,8 @@ const teams = (state=DEFAULT_STATE, action) => {
   switch(action.type) {
     case ADD_TEAM_MEMBER:
       return addTeamMember(state, action)
+    case BULK_ADD_TEAM:
+      return bulkAddTeam(state, action)
     case ADD_TEAM_CHARACTER_BAN:
       return addTeamCharacterBan(state, action)
     case ADD_TEAM_STAGE_CHOICE:

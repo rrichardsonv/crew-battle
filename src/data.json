@@ -34,7 +34,7 @@
     "Singles 1", "Doubles 1", "Doubles 1", "Doubles 2", "Doubles 1", "Singles 1"
   ],
   "displayMsgs": {
-    "entering":"Enter your name!",
+    "entering":"Enter each team member",
     "banning":"Ban a character!",
     "picking":"Pick your character!",
     "striking":"Ban a stage!",

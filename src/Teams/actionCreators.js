@@ -1,4 +1,4 @@
-import { ADD_TEAM_MEMBER, ADD_TEAM_CHARACTER_BAN, ADD_TEAM_STAGE_BAN, ADD_TEAM_CHARACTER_CHOICE, ADD_TEAM_STAGE_CHOICE } from './actions'
+import { ADD_TEAM_MEMBER, BULK_ADD_TEAM, ADD_TEAM_CHARACTER_BAN, ADD_TEAM_STAGE_BAN, ADD_TEAM_CHARACTER_CHOICE, ADD_TEAM_STAGE_CHOICE } from './actions'
 import { setActivePlayer } from '../Games/actionCreators'
 
 export function addTeamMember (id, player) {
@@ -6,6 +6,14 @@ export function addTeamMember (id, player) {
     type: ADD_TEAM_MEMBER,
     teamId: id,
     player: player
+  }
+}
+
+export function bulkAddTeam (id, players) {
+  return {
+    type: BULK_ADD_TEAM,
+    teamId: id,
+    players: players
   }
 }
 
@@ -44,7 +52,7 @@ export function lockInChoice (args) {
   switch (args.phase) {
     case 'enter':
       return function (dispatch, getState) {
-        dispatch(addTeamMember (args.team, args.player))
+        dispatch(bulkAddTeam (args.team, args.players))
         dispatch(setActivePlayer())
       }
     case 'pick':
